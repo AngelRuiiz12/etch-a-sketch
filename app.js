@@ -4,9 +4,11 @@ const btn = document.querySelector("#btn")
 
 function createGrid(size) {
 
+    // Necesario para que se sobreescriban los cuadrados al seleccionar un nuevo size
     container.textContent = "";
 
-    let squareSize = 960 / size
+    // 960 es porque ese es el tamaño en px del contenedor (div class="containter")
+    let squareSize = 960 / size  
 
     for (let i = 0; i < size * size; i++) {
 
@@ -15,6 +17,7 @@ function createGrid(size) {
         new_div.style.width = squareSize + "px"
         new_div.style.height = squareSize + "px"
 
+        // Implemento el coloreado del cuadrado cuando paso el mouse por encima
         new_div.addEventListener("mouseover", () => {
             new_div.style.backgroundColor = "black"
         })
@@ -24,7 +27,6 @@ function createGrid(size) {
 
     }
 }
-
 
 
 createGrid(16)
